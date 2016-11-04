@@ -7,14 +7,14 @@ const sb = new SendBird({appId: APP_ID});
 const sendBirdConnect = (userEmail, username, cb) => {
   sb.connect(userEmail, function(user, err) {
     if (err) {
-      return console.error('error in sendBird login', err);
+      return console.error('SendBird.js: Error in sendBird login', err);
     }
-    console.log('connected but not updated');
+    console.log('SendBird.js: connected but not updated');
     sb.updateCurrentUserInfo(username, '', function(response, error) {
       if (err) {
-        return console.error('error sendBird login', err);
+        return console.error('SendBird.js: Error sendBird login', err);
       }
-      console.log('connected and updated');
+      console.log('SendBird.js: Connected and updated.');
     });
   });
 };
@@ -23,7 +23,7 @@ const sendBirdGetUsers = (cb) => {
   const query = sb.createUserListQuery();
   query.next(function(users, err) {
     if (err) {
-      return console.error('Error getting users with SendBird.', err);
+      return console.error('SendBird.js: Error getting users with SendBird.', err);
     }
     cb(users.filter(user => user.userId !== sb.currentUser.userId));
   });
@@ -37,7 +37,7 @@ const sendBirdCreateGroupChat = (callback) => {
   if (! channel) {
     sb.GroupChannel.createChannel(_friendsList, false, function(channel, error) {
       if (error) {
-        return console.error('we got a problem', error);
+        return console.error('SendBird.js: Error creating channel.', error);
       } 
       callback(channel);      
     });
@@ -46,8 +46,7 @@ const sendBirdCreateGroupChat = (callback) => {
     console.log('If the channel already exits', _inviteIds);
     channel.inviteWithUserIds(_inviteIds, function(response, error) {
       if (error) {
-        console.log(error);
-        return;
+        return console.error(error);
       }
       callback();
     });
