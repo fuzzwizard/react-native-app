@@ -6,14 +6,8 @@ import {
 } from 'react-native';
 
 const Button = ({label, onPress, customStyles}) => {
-  // let buttonStyle;
-  // if (customStyles && customStyles.button) {
-  //   buttonStyle = {...styles.button, ...customStyles.button};
-  //   text = {...styles.buttonText, ...customStyles.buttonText}
-  // } else {
   let buttonStyle = styles.button;
   let text = styles.buttonText;
-  // }
 
   return (
     <TouchableHighlight

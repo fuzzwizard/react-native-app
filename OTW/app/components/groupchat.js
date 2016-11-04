@@ -51,7 +51,6 @@ class GroupChat extends Component {
     sb.addChannelHandler('MessageHandler', ChannelHandler);
   }
 
-
   onDisconnect() {
     var thisInstance = this;
     this.props.channel.leave(function(response, error) {
@@ -85,22 +84,6 @@ class GroupChat extends Component {
   getOldMessages() {
     var thisInstance = this;
     var _channel = this.props.channel;
-    return;
-    // TODO(Mitch): assess the validity of the underneath code. appears to have
-    // been deprecated.
-
-    // var messageListQuery = _channel.createPreviousMessageListQuery();
-    // messageListQuery.load(20, true, function(messageList, error) {
-    //   if (error) {
-    //     console.error('getOld Messages error line 87', error);
-    //     return;
-    //   }
-    //   var messages = messageList.concat(thisInstance.state.messageArray);
-    //   thisInstance.setState({
-    //     messageArray: messages,
-    //     dataSource: thisInstance.state.dataSource.cloneWithRows(messages)
-    //   });
-    // });
   }
 
   render() {
