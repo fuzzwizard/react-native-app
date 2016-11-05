@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import Button from './Button';
@@ -16,14 +17,13 @@ class UserBar extends Component {
     const user = this.props.user;
     if (user) {
       return (
-      <View style={[styles.bar, styles.shadow]}>
-        <View style={styles.badge}>
-          <HamburgerButton
-            onPress={this.props.openControlPanel}
-          />
-          <Text style={styles.tagline}>never be alone</Text>
+      <View style={styles.bar}>
+        <HamburgerButton
+          onPress={this.props.openControlPanel}
+        />
+        <View style={{width: Dimensions.get('window').width, justifyContent: 'center', alignItems: 'center'}}>  
+          <Text style={styles.tagline}>Compass</Text>
         </View>
-       <Badge user={user}/>
       </View>
     );
     } else {
@@ -33,27 +33,18 @@ class UserBar extends Component {
 }
 
 const styles = {
-  shadow: {
-    shadowColor: '#000000',
-    shadowOpacity: 0.8,
-    shadowRadius: 3,
-    shadowOffset: {
-      height: 2,
-      width: 1
-    }
-  },
   bar: {
     flexDirection: 'row',
-    backgroundColor: '#76608a',
+    backgroundColor: 'white',
     marginTop: 30,
-    justifyContent: 'space-between',
     alignItems: 'center',
-    height: 60,
+    height: 40,
+    width: Dimensions.get('window').width
   },
   user: {
     textAlign: 'center',
     margin: 10,
-    color: 'white'
+    color: 'black'
   },
   image: {
     width: 40,
@@ -61,22 +52,10 @@ const styles = {
     borderRadius: 20,
     justifyContent: 'flex-end'
   },
-  badge: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
   tagline: {
-    marginLeft: 5,
-    color: 'white',
+    color: 'black',
     fontSize: 18,
-    fontStyle: 'italic',
     fontWeight: 'bold',
-    textShadowColor: '#000000',
-    textShadowRadius: 1,
-    textShadowOffset: {
-      height: 1,
-      width: 0.5
-    }
   }
 };
 

@@ -14,19 +14,19 @@ HamburgerButton = ({onPress}) => (
 const styles = {
   button: {
     marginLeft: 15,
+    marginRight: 0,
     justifyContent: 'flex-start',
-    backgroundColor: 'rgba(0,0,0,0)'
+    backgroundColor: 'rgba(0,0,0,0)',
+    width: 20,
+    position: 'absolute',
+    top: -12,
+    left: 0,
+    zIndex: 1
   },
   buttonText: {
-    color: 'white',
+    color: 'grey',
     fontSize: 20,
     fontWeight: 'bold',
-    textShadowColor: '#000000',
-    textShadowRadius: 1,
-    textShadowOffset: {
-      height: 0.5,
-      width: 0.5
-    }
   }
 };
 

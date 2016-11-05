@@ -9,7 +9,8 @@ import {
   View,
   TextInput,
   TouchableHighlight,
-  MapView
+  MapView,
+  Dimensions
 } from 'react-native';
 
 
@@ -41,13 +42,12 @@ class Help extends Component {
         />
 
         <MapView
-          style={{height: 450, margin: 5}}
+          style={{height: Dimensions.get('window').height}}
           showsUserLocation={true}
           followUserLocation={true}
           onRegionChangeComplete={this.onRegionChangeComplete.bind(this)}
         />
 
-        <BottomBarContainer/>
       </View>
     );
   }
