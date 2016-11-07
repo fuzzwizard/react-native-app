@@ -1,5 +1,5 @@
 import React from 'react';
-import _addHelpie from '../utils/firebaseApp';
+//import _addHelpie from '../utils/firebaseApp';
 
 import {
   View,

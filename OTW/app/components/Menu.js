@@ -3,8 +3,19 @@ import {Text, View, StyleSheet} from 'react-native';
 
 import Button from './Button';
 import Badge from './Badge';
+//import removeUser from '../actions/userActions';
+
+//import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+
+// function logout() {
+//   GoogleSignin.revokeAccess()
+//   .then(() => GoogleSignin.signOut())
+//   .then(this.props.removeUser.bind(this))
+//   .done();
+// }
 
 const Menu = ({_handleForwardAction, closeControlPanel, user}) => {
+
   return (
     <View style={styles.container}>
       <Button
@@ -19,6 +30,10 @@ const Menu = ({_handleForwardAction, closeControlPanel, user}) => {
         onPress={closeControlPanel}
         label="Close Panel"
         style={{backgroundColor: 'red'}}
+      />
+      <Button
+        //onPress={logout}
+        label="Log Out"
       />
     </View>
   );

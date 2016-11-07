@@ -9,7 +9,7 @@ import {
   Image
 } from 'react-native';
 
-import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+//import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 import {sendBirdConnect} from '../utils/sendBird';
 
