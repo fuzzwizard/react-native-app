@@ -10,29 +10,36 @@ import LandingPage from '../components/LandingPage';
 // TODO: refactor this part to return a better component
 export default function getComponent(routeKey, _handleNavigate, _handleBackAction, _handleForwardAction, openControlPanel, closeControlPanel) {
   switch (routeKey) {
-    case 'home':
-      return LandingPage({_handleNavigate, _handleForwardAction});
+  case 'home':
+    return LandingPage({_handleNavigate, _handleForwardAction});
       
-    case 'signIn':
-      return <SignInContainer
+  case 'signIn':
+    return <SignInContainer
           _handleNavigate={_handleNavigate}
           _handleBackAction={_handleBackAction}
           _handleForwardAction={_handleForwardAction} />;
-    case 'help':
-      return <HelpContainer
+  case 'help':
+    return <HelpContainer
           _handleNavigate={_handleNavigate}
           _handleForwardAction={_handleForwardAction}
           _handleBackAction={_handleBackAction}
           openControlPanel={openControlPanel}
           closeControlPanel={closeControlPanel} />;
-    case 'helper':
-      return <HelperContainer 
+  case 'timeline':
+    return <HelpContainer
+          _handleNavigate={_handleNavigate}
+          _handleForwardAction={_handleForwardAction}
+          _handleBackAction={_handleBackAction}
+          openControlPanel={openControlPanel}
+          closeControlPanel={closeControlPanel} />;
+  case 'helper':
+    return <HelperContainer 
           _handleNavigate={_handleNavigate}
           _handleForwardAction={_handleForwardAction}
           _handleBackAction={_handleBackAction}
           openControlPanel={openControlPanel}
           closeControlPanel={closeControlPanel}/>;
-    default:
-      return <LandingPage _handleNavigate = {_handleNavigate} />;
+  default:
+    return <LandingPage _handleNavigate = {_handleNavigate} />;
   }
 }

@@ -12,6 +12,10 @@ const Menu = ({_handleForwardAction, closeControlPanel, user}) => {
         label='Help'
       />
       <Button
+        onPress={() => _handleForwardAction('')}
+        label='Timeline'
+      />
+      <Button
         onPress={closeControlPanel}
         label="Close Panel"
         style={{backgroundColor: 'red'}}
